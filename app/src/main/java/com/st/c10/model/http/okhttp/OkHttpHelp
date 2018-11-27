@@ -1,0 +1,106 @@
+
+
+1.Get请求
+String url = "https://www.baidu.com/";
+OkHttpUtil.okHttpGet(url, new CallBackUtil.CallBackString() {
+    @Override
+    public void onFailure(Call call, Exception e) {}
+
+    @Override
+    public void onResponse(String response) {
+        Toast.makeText(MainActivity.this,"Success",Toast.LENGTH_SHORT).show();
+        Log.d("kwwl",response);
+    }
+});
+
+2.Post请求
+String url = "https://www.baidu.com/";
+HashMap<String, String> paramsMap = new HashMap<>();
+paramsMap.put("title","title");
+OkHttpUtil.okHttpPost(url, paramsMap, new CallBackUtil.CallBackString() {
+    @Override
+    public void onFailure(Call call, Exception e) {
+
+    }
+
+    @Override
+    public void onResponse(String response) {
+
+    }
+});
+
+3.Put请求
+String url = "https://www.baidu.com/";
+HashMap<String, String> paramsMap = new HashMap<>();
+paramsMap.put("title","title");
+OkHttpUtil.okHttpPut(url, paramsMap, new CallBackUtil.CallBackString() {
+    @Override
+    public void onFailure(Call call, Exception e) {
+
+    }
+
+    @Override
+    public void onResponse(String response) {
+
+    }
+});
+
+4.Delete请求
+String url = "https://www.baidu.com/";
+HashMap<String, String> paramsMap = new HashMap<>();
+paramsMap.put("title","title");
+OkHttpUtil.okHttpDelete(url, paramsMap, new CallBackUtil.CallBackString() {
+    @Override
+    public void onFailure(Call call, Exception e) {
+
+    }
+
+    @Override
+    public void onResponse(String response) {
+
+    }
+});
+
+5.文件下载
+OkHttpUtil.okHttpDownloadFile("url", new CallBackUtil.CallBackFile("fileDir","fileName") {
+    @Override
+    public void onFailure(Call call, Exception e) {
+
+    }
+
+    @Override
+    public void onProgress(float progress, long total) {
+    }
+
+    @Override
+    public void onResponse(File response) {
+
+    }
+});
+
+6.文件上传
+File file = new File(Environment.getExternalStorageDirectory()+"/kwwl/abc.jpg");
+HashMap<String, String> paramsMap = new HashMap<>();
+paramsMap.put("title","title");
+OkHttpUtil.okHttpUploadFile(url, file, "image", OkhttpUtil.FILE_TYPE_IMAGE, paramsMap, new CallBackUtil.CallBackString() {
+    @Override
+    public void onFailure(Call call, Exception e) {
+
+    }
+
+    @Override
+    public void onProgress(float progress, long total) {
+
+    }
+
+    @Override
+    public void onResponse(String response) {
+
+    }
+});
+
+
+
+
+
+
